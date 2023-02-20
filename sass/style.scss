@@ -37,6 +37,10 @@ $color-light-theme-5: hsl(230, 17%, 14%);
 	margin-bottom: 2.4rem;
 }
 
+.marg-btm-m {
+	margin-bottom: 4.8rem;
+}
+
 //////////
 // GENERAL
 //////////
@@ -78,7 +82,7 @@ main .container {
 
 .container {
 	max-width: 120rem;
-	margin-inline: auto;
+	margin: 0 auto;
 }
 
 .box-wrapper {
@@ -94,6 +98,11 @@ main .container {
 	margin-bottom: 0.5rem;
 }
 
+.heading-secondary {
+	font-size: 2.4rem;
+	color: $color-dark-theme-5;
+}
+
 .header-p {
 	color: $color-dark-theme-4;
 }
@@ -101,10 +110,13 @@ main .container {
 .social-box-big {
 	background-color: $color-dark-theme-3;
 	border-radius: 4px;
+	width: 28rem;
 	padding: 3.6rem 6.4rem;
 	text-align: center;
 	overflow: hidden;
 	position: relative;
+	transition: all 0.3s ease;
+	cursor: pointer;
 
 	.wrapper-social-info {
 		display: flex;
@@ -142,21 +154,6 @@ main .container {
 		text-transform: uppercase;
 	}
 
-	.wrapper-today-stats {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-
-		.stats-up {
-			color: $color-primary-1;
-		}
-
-		.stats-down {
-			color: $color-primary-2;
-		}
-	}
-
 	&:nth-child(1) {
 		border-top: 4px solid $color-facebook;
 	}
@@ -172,6 +169,59 @@ main .container {
 	&:nth-child(4) {
 		border-top: 4px solid $color-youtube;
 	}
+}
+
+.wrapper-today-stats {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	.stats-up {
+		color: $color-primary-1;
+	}
+
+	.stats-down {
+		color: $color-primary-2;
+	}
+}
+
+.social-box-small {
+	padding: 2.4rem;
+	width: 28rem;
+	transition: all 0.3s ease;
+	cursor: pointer;
+
+	background-color: $color-dark-theme-3;
+	border-radius: 4px;
+
+	.wrapper-content-type,
+	.wrapper-content-stats {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 9.6rem;
+	}
+
+	.wrapper-content-type {
+		margin-bottom: 1.8rem;
+		color: $color-dark-theme-4;
+		font-weight: 700;
+	}
+
+	.wrapper-content-stats {
+		align-items: baseline;
+
+		.score {
+			font-size: 3rem;
+			font-weight: 700;
+		}
+	}
+}
+
+.social-box-big:hover,
+.social-box-small:hover {
+	background-color: lighten($color-dark-theme-3, 10);
 }
 
 // SPACING SYSTEM (px)
