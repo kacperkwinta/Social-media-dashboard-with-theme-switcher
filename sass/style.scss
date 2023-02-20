@@ -76,6 +76,49 @@ header .container {
 	align-items: center;
 }
 
+.wrapper-btn {
+	color: $color-dark-theme-4;
+	line-height: 1;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: 2.4rem;
+	transition: all 0.3s ease;
+	cursor: pointer;
+
+	&:hover {
+		color: $color-dark-theme-5;
+	}
+
+	&:hover .btn .dot {
+		background-color: lighten($color-dark-theme-3, 10);
+		transform: translateX(1.8rem);
+	}
+
+	.btn {
+		width: 4.8rem;
+		border-radius: 10rem;
+		height: 2.8rem;
+		background-image: linear-gradient(
+			to right,
+			hsl(210, 78%, 56%),
+			hsl(146, 68%, 55%)
+		);
+
+		display: flex;
+		align-items: center;
+		padding: 0.5rem;
+
+		.dot {
+			transition: all 0.3s ease;
+			height: 2rem;
+			width: 2rem;
+			background-color: $color-dark-theme-3;
+			border-radius: 50%;
+		}
+	}
+}
+
 main .container {
 	transform: translateY(-11rem);
 }
@@ -101,6 +144,7 @@ main .container {
 .heading-secondary {
 	font-size: 2.4rem;
 	color: $color-dark-theme-5;
+	padding: 0 1.2rem;
 }
 
 .header-p {
@@ -134,20 +178,6 @@ main .container {
 		font-weight: 700;
 	}
 
-	// FOR INSTAGRAM BOX ONLY {
-	.border-top {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 3px;
-		width: 100%;
-		background-image: linear-gradient(
-			to right,
-			hsl(37, 97%, 70%),
-			hsl(329, 70%, 58%)
-		);
-	}
-
 	.social-score-type {
 		letter-spacing: 5px;
 		color: $color-dark-theme-4;
@@ -162,8 +192,18 @@ main .container {
 		border-top: 4px solid $color-twitter;
 	}
 
-	&:nth-child(3) {
-		border-top: 4px solid $color-instagram;
+	// FOR INSTAGRAM BOX ONLY {
+	.border-top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 4px;
+		width: 100%;
+		background-image: linear-gradient(
+			to right,
+			hsl(37, 97%, 70%),
+			hsl(329, 70%, 58%)
+		);
 	}
 
 	&:nth-child(4) {
@@ -222,6 +262,64 @@ main .container {
 .social-box-big:hover,
 .social-box-small:hover {
 	background-color: lighten($color-dark-theme-3, 10);
+}
+
+// BELOW 1200 PX
+@media (max-width: 75em) {
+	header .container {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.heading-secondary {
+		text-align: center;
+	}
+}
+
+// BELOW 600 PX
+@media (max-width: 37.5em) {
+	header {
+		background-color: $color-dark-theme-2;
+		padding: 3.6rem 0 16rem;
+	}
+
+	header .container {
+		flex-direction: column;
+		padding: 0 1.2rem;
+	}
+
+	.wrapper {
+		width: 100%;
+		border-bottom: 1px solid $color-dark-theme-3;
+		padding-bottom: 2.4rem;
+	}
+
+	.wrapper-btn {
+		width: 100%;
+		margin-top: 2.4rem;
+		gap: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.heading-primary {
+		font-size: 2.4rem;
+		color: $color-dark-theme-5;
+		margin-bottom: 0.5rem;
+	}
+
+	.heading-secondary {
+		font-size: 2rem;
+		color: $color-dark-theme-5;
+		padding: 0 1.2rem;
+		text-align: left;
+	}
+
+	.social-box-big,
+	.social-box-small {
+		width: 100%;
+		margin: 1.2rem;
+	}
 }
 
 // SPACING SYSTEM (px)
