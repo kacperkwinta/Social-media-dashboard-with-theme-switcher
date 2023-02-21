@@ -84,7 +84,6 @@ header .container {
 	align-items: center;
 	gap: 2.4rem;
 	transition: all 0.3s ease;
-	cursor: pointer;
 
 	&:hover {
 		color: $color-dark-theme-5;
@@ -92,10 +91,10 @@ header .container {
 
 	&:hover .btn .dot {
 		background-color: lighten($color-dark-theme-3, 10);
-		transform: translateX(1.8rem);
 	}
 
 	.btn {
+		cursor: pointer;
 		width: 4.8rem;
 		border-radius: 10rem;
 		height: 2.8rem;
@@ -149,6 +148,7 @@ main .container {
 
 .header-p {
 	color: $color-dark-theme-4;
+	font-weight: 700;
 }
 
 .social-box-big {
@@ -170,6 +170,7 @@ main .container {
 
 		.social-name {
 			color: $color-dark-theme-4;
+			font-weight: 700;
 		}
 	}
 
@@ -331,6 +332,57 @@ footer {
 	.social-box-small {
 		width: 100%;
 		margin: 1.2rem;
+	}
+}
+
+////////////////////////
+// STYLES FOR LIGHT MODE
+////////////////////////
+.body--light {
+	background-color: $color-light-theme-1;
+	color: $color-light-theme-5;
+}
+
+.header--light {
+	background-color: $color-light-theme-2;
+}
+
+.heading-primary--light,
+.btn-text--light {
+	color: $color-light-theme-5;
+}
+
+.btn--light {
+	background-image: none !important;
+	background-color: $color-toggle-light !important;
+}
+
+.btn--light:hover {
+	background-image: linear-gradient(
+		to right,
+		hsl(210, 78%, 56%),
+		hsl(146, 68%, 55%)
+	) !important;
+}
+
+.dot--light {
+	background-color: $color-light-theme-2 !important;
+	transform: translateX(1.8rem);
+}
+
+.header-p--light,
+.content-type--light,
+.heading-secondary--light,
+.social-score-type--light {
+	color: $color-light-theme-4 !important;
+}
+
+.social-box-big--light,
+.social-box-small--light {
+	background-color: $color-light-theme-3;
+
+	&:hover {
+		background-color: darken($color-light-theme-3, 4);
 	}
 }
 
